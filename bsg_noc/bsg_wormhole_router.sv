@@ -1,6 +1,7 @@
 `include "bsg_defines.sv"
 `include "bsg_noc_links.svh"
 `include "bsg_wormhole_router.svh"
+`include "bsg_wormhole_router_pkg.sv"
 
 module bsg_wormhole_router
      import bsg_wormhole_router_pkg::StrictXY;
