@@ -9,15 +9,17 @@
         mem                                          \
           ( .CLK   ( clk_i  )                        \
           , .A     ( addr_i )                        \
-          , .D     ( data_i )                        \
+          , .D     ( {1'b0,data_i} )                 \
           , .Q     ( data_o )                        \
           , .CEN   ( ~v_i   )                        \
           , .GWEN  ( ~w_i   )                        \
           , .RET1N ( 1'b1   )                        \
           , .STOV  ( 1'b0   )                        \
-          , .EMA   ( 3'b011 )                        \
-          , .EMAW  ( 2'b01  )                        \
+          , .EMA   ( 3'b101 )                        \
+          , .EMAW  ( 2'b00  )                        \
           , .EMAS  ( 1'b0   )                        \
+          , .WABL  ( 1'b1   )                        \
+          , .WABLM ( 2'b00  )                        \
           );                                         \
     end: macro                                       \
     else                                             \
@@ -33,9 +35,11 @@
           , .GWEN  ( ~w_i   )                        \
           , .RET1N ( 1'b1   )                        \
           , .STOV  ( 1'b0   )                        \
-          , .EMA   ( 3'b011 )                        \
-          , .EMAW  ( 2'b01  )                        \
+          , .EMA   ( 3'b101 )                        \
+          , .EMAW  ( 2'b00  )                        \
           , .EMAS  ( 1'b0   )                        \
+          , .WABL  ( 1'b1   )                        \
+          , .WABLM ( 2'b00  )                        \
           );                                         \
     end: macro
 
@@ -52,9 +56,11 @@
           , .GWEN  ( ~w_i   )                        \
           , .RET1N ( 1'b1   )                        \
           , .STOV  ( 1'b0   )                        \
-          , .EMA   ( 3'b011 )                        \
-          , .EMAW  ( 2'b01  )                        \
+          , .EMA   ( 3'b101 )                        \
+          , .EMAW  ( 2'b00  )                        \
           , .EMAS  ( 1'b0   )                        \
+          , .WABL  ( 1'b1   )                        \
+          , .WABLM ( 2'b00  )                        \
           );                                         \
     end: macro
 
@@ -71,9 +77,11 @@
           , .GWEN  ( ~w_i   )                        \
           , .RET1N ( 1'b1   )                        \
           , .STOV  ( 1'b0   )                        \
-          , .EMA   ( 3'b011 )                        \
-          , .EMAW  ( 2'b01  )                        \
+          , .EMA   ( 3'b101 )                        \
+          , .EMAW  ( 2'b00  )                        \
           , .EMAS  ( 1'b0   )                        \
+          , .WABL  ( 1'b1   )                        \
+          , .WABLM ( 2'b00  )                        \
           );                                         \
     end: macro
 
