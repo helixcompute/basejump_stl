@@ -26,6 +26,26 @@
       ,.WABL  (1'b1)                                          \
       ,.WABLM (2'b01)                                         \
     );                                                        \
+  end else if (harden_p && els_p == words && width_p == 67 && "tag" == "me")\
+    begin: macro_z2                                            \
+    gf12_1r1w_d``words``_w68_``tag``_2rf                      \
+      mem (                                                   \
+      .CLKA   (clk_i)                                         \
+      ,.CLKB  (clk_i)                                         \
+      ,.CENA  (~r_v_i)                                        \
+      ,.AA    (r_addr_i)                                      \
+      ,.QA    (r_data_o)                                      \
+      ,.CENB  (~w_v_i)                                        \
+      ,.AB    (w_addr_i)                                      \
+      ,.DB    ({1'b0,w_data_i})                               \
+      ,.EMAA  (3'b100)                                        \
+      ,.EMAB  (3'b100)                                        \
+      ,.EMASA (1'b1)                                          \
+      ,.STOV  (1'b0)                                          \
+      ,.RET1N (1'b1)                                          \
+      ,.WABL  (1'b1)                                          \
+      ,.WABLM (2'b01)                                         \
+    );                                                        \
   end else if (harden_p && els_p == words && width_p == bits) \
     begin: macro                                              \
     gf12_1r1w_d``words``_w``bits``_``tag``_2rf                \
