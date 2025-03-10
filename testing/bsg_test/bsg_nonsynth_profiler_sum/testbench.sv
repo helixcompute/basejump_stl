@@ -9,7 +9,7 @@ module rando (input clk_i);
    
    always @(posedge clk_i)
      begin
-	val <= $urandom();
+	val <= $urandom() & 32'h0000_FFFF;
      end
 endmodule
 
@@ -44,9 +44,9 @@ module testbench();
      end
 
    
-   bind rando bsg_nonsynth_profiler_client_inc      #(.suffix_p("_suff")) u_bind
+   bind rando bsg_nonsynth_profiler_client_add      #(.suffix_p("_suff")) u_bind
    (.clk_i(clk_i)
-    ,.countme_i(val[0])
+    ,.countme_i(val)
     );
 
    bsg_nonsynth_profiler_master #(.max_counters_p(1000)) profiler ();
