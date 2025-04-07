@@ -115,26 +115,11 @@
 ,.QB           () \
 ,.DB           ( w_data_i) \
 ,.CEBB         ( ~w_v_i) \
-,.CEBMB        (1'b1) \
 ,.WEBB         (~w_v_i) \
 ,.SD           ( 'b0) \
 ,.DSLP         ( 'b0) \
-,.BWEBA        ( 'b0) \
-,.BWEBB        ( 'b0) \
-,.CEBMA        ( 'b0) \
-,.WEBMA        ( 'b0) \
-,.AMA          ( 'b0) \
-,.BWEBMA       ( 'b0) \
-,.DMA          ( 'b0) \
-,.WEBMB        ( 'b0) \
-,.AMB          ( 'b0) \
-,.BWEBMB       ( 'b0) \
-,.DMB          ( 'b0) \
 ,.PUDELAY_SD   () \
 ,.PUDELAY_DSLP () \
-,.BIST         ( 'b0) \
-,.BISTCLKEN    ( 'b0) \
-,.CLKM         ( 'b0) \
 ,.FADIO        ( 'b0) \
 ,.REDENIO      ( 'b0) \
 ,.SE           ( 'b0) \
