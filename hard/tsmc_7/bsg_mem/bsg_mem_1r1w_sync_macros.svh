@@ -106,7 +106,7 @@
       mem (                                                   \
  .AA           (r_addr_i) \
 ,.CLKA         (clk_i) \
-,.DA           () \
+,.DA           ('b0) \
 ,.QA           (r_data_o) \
 ,.CEBA         (~r_v_i) \
 ,.WEBA         ( 1'b1) \
@@ -133,8 +133,8 @@
 ,.SOCB         ( ) \
 ,.SODB         ( ) \
 ,.DSLPLV       ( 'b0) \
-,.RTSEL        ( 'b0) \
-,.WTSEL        ( 'b0) \
+,.RTSEL        ( 2'b10) \
+,.WTSEL        ( 2'b01) \
     );         \
   end
 
