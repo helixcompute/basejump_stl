@@ -4,15 +4,15 @@
 
 // TODO: Re-analyze all constants
 `define bsg_mem_1rw_sync_1rf_macro(words,bits,tag)   \
-  if (harden_p && els_p == words && width_p == 131 && "tag" == "lane")\
-   begin: macro_z                             \
-      n7_1rw_d``words``_w132_``tag``_1rf      \
+  if (harden_p && els_p == words && width_p == bits) \
+    begin: macro                              \
+      n7_1rw_d``words``_w``bits``_``tag``_1rf \
         mem                                   \
           (                                   \
             .A            (addr_i)            \
           , .CEB          (~v_i)              \
           , .CLK          (clk_i)             \
-          , .D            ({1'b0,data_i})     \
+          , .D            (data_i)            \
           , .DFTBYP       (1'b0)              \
           , .DSLP         (1'b0)              \
           , .DSLPLV       (1'b0)              \
@@ -31,15 +31,18 @@
           , .WEB          (~w_i)              \
           , .WTSEL        (2'b01)              \
           );                                  \
-    end else if (harden_p && els_p == words && width_p == bits) \
+    end: macro
+
+`define bsg_mem_1rw_sync_1rf_macro_pad(words,bits,tag,sram_bits)   \
+  if (harden_p && els_p == words && width_p == bits) \
     begin: macro                              \
-      n7_1rw_d``words``_w``bits``_``tag``_1rf \
+      n7_1rw_d``words``_w``sram_bits``_``tag``_1rf \
         mem                                   \
           (                                   \
             .A            (addr_i)            \
           , .CEB          (~v_i)              \
           , .CLK          (clk_i)             \
-          , .D            (data_i)            \
+          , .D            ({{sram_bits-bits{1'b0}},data_i})            \
           , .DFTBYP       (1'b0)              \
           , .DSLP         (1'b0)              \
           , .DSLPLV       (1'b0)              \
