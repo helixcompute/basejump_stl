@@ -19,11 +19,11 @@
       ,.DSLP         (1'b0)                         \
       ,.DSLPLV       (1'b0)                         \
       ,.FADIO        (5'b0)                         \
-      ,.KP           (2'b0)                         \
+      ,.KP           (2'b10)                        \
       ,.PUDELAY_DSLP ()                             \
       ,.PUDELAY_SD   ()                             \
       ,.Q            (r_data_o)                     \
-      ,.RCT          (2'b0)                         \
+      ,.RCT          (2'b01)                        \
       ,.REB          (~r_v_i)                       \
       ,.REDENIO      (1'b0)                         \
       ,.SD           (1'b0)                         \
@@ -32,7 +32,7 @@
       ,.SID          (2'b0)                         \
       ,.SOC          ()                             \
       ,.SOD          ()                             \
-      ,.WCT          (2'b0)                         \
+      ,.WCT          (2'b01)                        \
       ,.WEB          (~w_v_i)                       \
     );                                              \
   end
@@ -51,11 +51,11 @@
       ,.DSLP         (1'b0)                                       \
       ,.DSLPLV       (1'b0)                                       \
       ,.FADIO        (5'b0)                                       \
-      ,.KP           (2'b0)                                       \
+      ,.KP           (2'b10)                                      \
       ,.PUDELAY_DSLP ()                                           \
       ,.PUDELAY_SD   ()                                           \
       ,.Q            (r_data_o)                                   \
-      ,.RCT          (2'b0)                                       \
+      ,.RCT          (2'b01)                                      \
       ,.REB          (~r_v_i)                                     \
       ,.REDENIO      (1'b0)                                       \
       ,.SD           (1'b0)                                       \
@@ -64,7 +64,7 @@
       ,.SID          (2'b0)                                       \
       ,.SOC          ()                                           \
       ,.SOD          ()                                           \
-      ,.WCT          (2'b0)                                       \
+      ,.WCT          (2'b01)                                      \
       ,.WEB          (~w_v_i)                                     \
     );                                                            \
   end
@@ -84,20 +84,20 @@
       ,.DSLP            (1'b0)                \
       ,.DSLPLV          (1'b0)                \
       ,.FADIO           (5'b0)                \
-      ,.KP              (2'b0)                \
-      ,.PUDELAY_DSLP    ()                \
-      ,.PUDELAY_SD      ()                \
+      ,.KP              (2'b10)               \
+      ,.PUDELAY_DSLP    ()                    \
+      ,.PUDELAY_SD      ()                    \
       ,.Q               (r_data_o)            \
-      ,.RCT             (2'b0)                \
+      ,.RCT             (2'b01)               \
       ,.REB             (~r_v_i)              \
       ,.REDENIO         (1'b0)                \
       ,.SD              (1'b0)                \
       ,.SE              (1'b0)                \
       ,.SIC             (1'b0)                \
       ,.SID             (2'b0)                \
-      ,.SOC             ()                \
-      ,.SOD             ()                \
-      ,.WCT             (2'b0)                \
+      ,.SOC             ()                    \
+      ,.SOD             ()                    \
+      ,.WCT             (2'b01)               \
       ,.WEB             (~w_v_i)              \
     );         \
   end

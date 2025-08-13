@@ -21,7 +21,7 @@
           , .PUDELAY_SD   ()                  \
           , .Q            (data_o)            \
           , .REDENIO      (1'b0)              \
-          , .RTSEL        (2'b10)              \
+          , .RTSEL        (2'b10)             \
           , .SD           (1'b0)              \
           , .SE           (1'b0)              \
           , .SIC          (1'b0)              \
@@ -29,7 +29,7 @@
           , .SOC          ()                  \
           , .SOD          ()                  \
           , .WEB          (~w_i)              \
-          , .WTSEL        (2'b01)              \
+          , .WTSEL        (2'b01)             \
           );                                  \
     end: macro
 
@@ -51,7 +51,7 @@
           , .PUDELAY_SD   ()                  \
           , .Q            (data_o)            \
           , .REDENIO      (1'b0)              \
-          , .RTSEL        (2'b10)              \
+          , .RTSEL        (2'b10)             \
           , .SD           (1'b0)              \
           , .SE           (1'b0)              \
           , .SIC          (1'b0)              \
@@ -59,7 +59,7 @@
           , .SOC          ()                  \
           , .SOD          ()                  \
           , .WEB          (~w_i)              \
-          , .WTSEL        (2'b01)              \
+          , .WTSEL        (2'b01)             \
           );                                  \
     end: macro
 
