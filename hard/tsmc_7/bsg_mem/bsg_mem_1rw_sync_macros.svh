@@ -16,7 +16,7 @@
           , .DFTBYP       (1'b0)              \
           , .DSLP         (1'b0)              \
           , .DSLPLV       (1'b0)              \
-          , .FADIO        (7'b0)              \
+          , .FADIO        ('0)                \
           , .PUDELAY_DSLP ()                  \
           , .PUDELAY_SD   ()                  \
           , .Q            (data_o)            \
@@ -46,7 +46,7 @@
           , .DFTBYP       (1'b0)              \
           , .DSLP         (1'b0)              \
           , .DSLPLV       (1'b0)              \
-          , .FADIO        (7'b0)              \
+          , .FADIO        ('0)                \
           , .PUDELAY_DSLP ()                  \
           , .PUDELAY_SD   ()                  \
           , .Q            (data_o)            \
@@ -68,36 +68,36 @@
     begin: macro                                     \
       n7_1rw_d``words``_w``bits``_``tag``_1sram      \
         mem                                          \
-          (                                   \
-  .SD('b0)  \
-  ,.DSLP('b0)  \
-  ,.CLK(clk_i)  \
-  ,.CEB(~v_i)  \
-  ,.WEB(~w_i)  \
-  ,.A(addr_i)  \
-  ,.BWEB('b0)  \
-  ,.D(data_i)  \
-  ,.Q(data_o)  \
-  ,.PUDELAY_SD()  \
-  ,.PUDELAY_DSLP()  \
-  ,.BIST('b0)  \
-  ,.CEBM('b0)  \
-  ,.WEBM('b0)  \
-  ,.AM('b0)  \
-  ,.BWEBM('b0)  \
-  ,.DM('b0)  \
-  ,.FADIO('b0)  \
-  ,.REDENIO('b0)  \
-  ,.SE('b0)  \
-  ,.DFTBYP('b0)  \
-  ,.SIC('b0)  \
-  ,.SID('b0)  \
-  ,.SOC()  \
-  ,.SOD()  \
-  ,.DSLPLV('b0)  \
-  ,.RTSEL('b0)  \
-  ,.WTSEL('b0)  \
-          );                                  \
+          (                                          \
+         .SD             ('b0)                       \
+         ,.DSLP          ('b0)                       \
+         ,.CLK           (clk_i)                     \
+         ,.CEB           (~v_i)                      \
+         ,.WEB           (~w_i)                      \
+         ,.A             (addr_i)                    \
+         ,.BWEB          ('b0)                       \
+         ,.D             (data_i)                    \
+         ,.Q             (data_o)                    \
+         ,.PUDELAY_SD    ()                          \
+         ,.PUDELAY_DSLP  ()                          \
+         ,.BIST          ('b0)                       \
+         ,.CEBM          ('b0)                       \
+         ,.WEBM          ('b0)                       \
+         ,.AM            ('b0)                       \
+         ,.BWEBM         ('b0)                       \
+         ,.DM            ('b0)                       \
+         ,.FADIO         ('b0)                       \
+         ,.REDENIO       ('b0)                       \
+         ,.SE            ('b0)                       \
+         ,.DFTBYP        ('b0)                       \
+         ,.SIC           ('b0)                       \
+         ,.SID           ('b0)                       \
+         ,.SOC           ()                          \
+         ,.SOD           ()                          \
+         ,.DSLPLV        ('b0)                       \
+         ,.RTSEL         ('b0)                       \
+         ,.WTSEL         ('b0)                       \
+          );                                         \
     end: macro
 
 `define bsg_mem_1rw_sync_1hdsram_macro(words,bits,tag) \
