@@ -69,6 +69,38 @@
     );                                                            \
   end
 
+`define bsg_mem_1r1w_sync_2rf_macro_pad2(words,bits,tag,sram_words) \
+ if (harden_p && els_p == words && width_p == bits)               \
+    begin: macro                                                  \
+    n7_1r1w_d``sram_words``_w``bits``_``tag``_2rf                 \
+      mem (                                                       \
+      .AA            (w_addr_i)                                   \
+      ,.AB           (r_addr_i)                                   \
+      ,.CLKR         (clk_i)                                      \
+      ,.CLKW         (clk_i)                                      \
+      ,.D            (w_data_i)                                   \
+      ,.DFTBYP       (1'b0)                                       \
+      ,.DSLP         (1'b0)                                       \
+      ,.DSLPLV       (1'b0)                                       \
+      ,.FADIO        ('0)                                         \
+      ,.KP           (2'b10)                                      \
+      ,.PUDELAY_DSLP ()                                           \
+      ,.PUDELAY_SD   ()                                           \
+      ,.Q            (r_data_o)                                   \
+      ,.RCT          (2'b01)                                      \
+      ,.REB          (~r_v_i)                                     \
+      ,.REDENIO      (1'b0)                                       \
+      ,.SD           (1'b0)                                       \
+      ,.SE           (1'b0)                                       \
+      ,.SIC          (1'b0)                                       \
+      ,.SID          (2'b0)                                       \
+      ,.SOC          ()                                           \
+      ,.SOD          ()                                           \
+      ,.WCT          (2'b01)                                      \
+      ,.WEB          (~w_v_i)                                     \
+    );                                                            \
+  end
+
 // Ultra High Density Two Port 1R1RW Register File RVT MVT Compiler
 `define bsg_mem_1r1rw_sync_2rf_macro(words,bits,tag) \
   if (harden_p && els_p == words && width_p == bits) \
