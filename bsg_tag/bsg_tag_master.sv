@@ -31,7 +31,6 @@ module bsg_tag_master
    (
     // from pins
     input clk_i
-    ,input en_i
     ,input data_i
     , output bsg_tag_s [els_p-1:0] clients_r_o
     );
@@ -249,7 +248,6 @@ module bsg_tag_master
 
 
         assign clients_r_o[i].clk = clk_i;
-        assign clients_r_o[i].en  = en_i;
      end
 
    
