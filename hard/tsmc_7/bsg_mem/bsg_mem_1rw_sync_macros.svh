@@ -141,5 +141,25 @@
     );                                                                      \
   end: macro
 
+`define bsg_mem_1rw_sync_banked_macro_pad(words,bits,wbank,dbank,sram_bits) \
+  if (harden_p && els_p == words && width_p == bits) begin: macro \
+    bsg_mem_1rw_sync_banked #(                                              \
+      .width_p(sram_bits)                                                     \
+      ,.els_p(els_p)                                                        \
+      ,.latch_last_read_p(latch_last_read_p)                                \
+      ,.num_width_bank_p(wbank)                                             \
+      ,.num_depth_bank_p(dbank)                                             \
+      ,.harden_p(harden_p)                                                  \
+    ) bmem (                                                                \
+      .clk_i(clk_i)                                                         \
+      ,.reset_i(reset_i)                                                    \
+      ,.v_i(v_i)                                                            \
+      ,.w_i(w_i)                                                            \
+      ,.addr_i(addr_i)                                                      \
+      ,.data_i(data_i)                                                      \
+      ,.data_o(data_o)                                                      \
+    );                                                                      \
+  end: macro
+
 `endif
 
