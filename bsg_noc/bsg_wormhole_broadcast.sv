@@ -1,3 +1,5 @@
+`include "bsg_defines.sv"
+
 // bsg_wormhole_broadcast
 //
 // Implements a 1-D broadcast for wormhole style messages
