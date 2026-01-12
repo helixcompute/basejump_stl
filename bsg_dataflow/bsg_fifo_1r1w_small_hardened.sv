@@ -82,6 +82,10 @@ module bsg_fifo_1r1w_small_hardened #(parameter `BSG_INV_PARAM(width_p)
       ,.empty_o  (empty)
       );
 
+   // Only read / write hardened mem when read_write_same_addr is false
+   wire write_mem_en = enque && (wptr_r != rptr_n);
+   wire read_mem_en = deque && (wptr_r != rptr_n);
+  
    // sync read
    // Prioritize write when reading/writing same address
    bsg_mem_1r1w_sync #(.width_p (width_p)
@@ -89,16 +93,17 @@ module bsg_fifo_1r1w_small_hardened #(parameter `BSG_INV_PARAM(width_p)
                       // MBT: this should be zero
                       ,.read_write_same_addr_p(0)
                       ,.disable_collision_warning_p(0)
+                       ,.latch_last_read_p(1)
                       ,.harden_p(1)
                       ) mem_1r1w_sync
      (.clk_i
       ,.reset_i
-      ,.w_v_i    (enque     )
-      ,.w_addr_i (wptr_r    )
-      ,.w_data_i (data_i    )
-      ,.r_v_i    (~read_write_same_addr_n)
-      ,.r_addr_i (rptr_n    )
-      ,.r_data_o (data_o_mem)
+      ,.w_v_i    (write_mem_en)
+      ,.w_addr_i (wptr_r      )
+      ,.w_data_i (data_i      )
+      ,.r_v_i    (read_mem_en )
+      ,.r_addr_i (rptr_n      )
+      ,.r_data_o (data_o_mem  )
       );
       
    // w_data bypass register, enable when read_write_same_addr happens
@@ -111,8 +116,15 @@ module bsg_fifo_1r1w_small_hardened #(parameter `BSG_INV_PARAM(width_p)
    
    // Read from bypass register when read_write_same_addr happens in previous cycle
    assign data_o = (read_write_same_addr_r)? data_o_reg : data_o_mem;
-   always_ff @(posedge clk_i)
-     read_write_same_addr_r <= read_write_same_addr_n;
+   // When read_write_same_addr happens, data will not be written into the hardened mem
+   // In this case, always read from the bypass reg until deque
+   bsg_dff_reset_set_clear #(.width_p(1)) read_write_same_addr_reg
+   (.clk_i
+   ,.reset_i
+   ,.set_i   (read_write_same_addr_n)
+   ,.clear_i (deque)
+   ,.data_o  (read_write_same_addr_r)
+   );
    
    // When enque==1 and read/write address are same, stop reading
    // A copy of data is written into bypass register in same cycle
