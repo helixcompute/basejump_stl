@@ -18,14 +18,14 @@
       ,.DFTBYP       (1'b0)                         \
       ,.DSLP         (1'b0)                         \
       ,.DSLPLV       (1'b0)                         \
-      ,.FADIO        ('0)                           \
+      ,.FADIO        ()                           \
       ,.KP           (2'b10)                        \
       ,.PUDELAY_DSLP ()                             \
       ,.PUDELAY_SD   ()                             \
       ,.Q            (r_data_o)                     \
       ,.RCT          (2'b01)                        \
       ,.REB          (~r_v_i)                       \
-      ,.REDENIO      (1'b0)                         \
+      ,.REDENIO      ()                         \
       ,.SD           (1'b0)                         \
       ,.SE           (1'b0)                         \
       ,.SIC          (1'b0)                         \
@@ -50,14 +50,14 @@
       ,.DFTBYP       (1'b0)                                       \
       ,.DSLP         (1'b0)                                       \
       ,.DSLPLV       (1'b0)                                       \
-      ,.FADIO        ('0)                                         \
+      ,.FADIO        ()                                         \
       ,.KP           (2'b10)                                      \
       ,.PUDELAY_DSLP ()                                           \
       ,.PUDELAY_SD   ()                                           \
       ,.Q            (r_data_o)                                   \
       ,.RCT          (2'b01)                                      \
       ,.REB          (~r_v_i)                                     \
-      ,.REDENIO      (1'b0)                                       \
+      ,.REDENIO      ()                                       \
       ,.SD           (1'b0)                                       \
       ,.SE           (1'b0)                                       \
       ,.SIC          (1'b0)                                       \
@@ -82,14 +82,14 @@
       ,.DFTBYP       (1'b0)                                       \
       ,.DSLP         (1'b0)                                       \
       ,.DSLPLV       (1'b0)                                       \
-      ,.FADIO        ('0)                                         \
+      ,.FADIO        ()                                         \
       ,.KP           (2'b10)                                      \
       ,.PUDELAY_DSLP ()                                           \
       ,.PUDELAY_SD   ()                                           \
       ,.Q            (r_data_o)                                   \
       ,.RCT          (2'b01)                                      \
       ,.REB          (~r_v_i)                                     \
-      ,.REDENIO      (1'b0)                                       \
+      ,.REDENIO      ()                                       \
       ,.SD           (1'b0)                                       \
       ,.SE           (1'b0)                                       \
       ,.SIC          (1'b0)                                       \
@@ -114,14 +114,14 @@
       ,.DFTBYP       (1'b0)                                       \
       ,.DSLP         (1'b0)                                       \
       ,.DSLPLV       (1'b0)                                       \
-      ,.FADIO        ('0)                                         \
+      ,.FADIO        ()                                         \
       ,.KP           (2'b10)                                      \
       ,.PUDELAY_DSLP ()                                           \
       ,.PUDELAY_SD   ()                                           \
       ,.Q            (r_data_o)                                   \
       ,.RCT          (2'b01)                                      \
       ,.REB          (~r_v_i)                                     \
-      ,.REDENIO      (1'b0)                                       \
+      ,.REDENIO      ()                                       \
       ,.SD           (1'b0)                                       \
       ,.SE           (1'b0)                                       \
       ,.SIC          (1'b0)                                       \
@@ -147,14 +147,14 @@
       ,.DFTBYP          (1'b0)                       \
       ,.DSLP            (1'b0)                       \
       ,.DSLPLV          (1'b0)                       \
-      ,.FADIO           ('0)                         \
+      ,.FADIO           ()                         \
       ,.KP              (2'b10)                      \
       ,.PUDELAY_DSLP    ()                           \
       ,.PUDELAY_SD      ()                           \
       ,.Q               (r_data_o)                   \
       ,.RCT             (2'b01)                      \
       ,.REB             (~r_v_i)                     \
-      ,.REDENIO         (1'b0)                       \
+      ,.REDENIO         ()                       \
       ,.SD              (1'b0)                       \
       ,.SE              (1'b0)                       \
       ,.SIC             (1'b0)                       \

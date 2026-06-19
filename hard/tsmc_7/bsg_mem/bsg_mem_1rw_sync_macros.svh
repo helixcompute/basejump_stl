@@ -16,11 +16,11 @@
           , .DFTBYP       (1'b0)              \
           , .DSLP         (1'b0)              \
           , .DSLPLV       (1'b0)              \
-          , .FADIO        ('0)                \
+          , .FADIO        ()                \
           , .PUDELAY_DSLP ()                  \
           , .PUDELAY_SD   ()                  \
           , .Q            (data_o)            \
-          , .REDENIO      (1'b0)              \
+          , .REDENIO      ()              \
           , .RTSEL        (2'b10)             \
           , .SD           (1'b0)              \
           , .SE           (1'b0)              \
@@ -46,11 +46,11 @@
           , .DFTBYP       (1'b0)              \
           , .DSLP         (1'b0)              \
           , .DSLPLV       (1'b0)              \
-          , .FADIO        ('0)                \
+          , .FADIO        ()                \
           , .PUDELAY_DSLP ()                  \
           , .PUDELAY_SD   ()                  \
           , .Q            (data_o)            \
-          , .REDENIO      (1'b0)              \
+          , .REDENIO      ()              \
           , .RTSEL        (2'b10)             \
           , .SD           (1'b0)              \
           , .SE           (1'b0)              \
